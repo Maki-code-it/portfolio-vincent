@@ -393,16 +393,25 @@ a {
         display: none;
     }
     
+    .navbar {
+        padding: 1rem 5%;
+    }
+    
+    .logo {
+        font-size: 1.2rem;
+    }
+    
     .nav-links {
         display: none;
         flex-direction: column;
-        background: #000;
+        background: rgba(0, 0, 0, 0.95);
         position: absolute;
         top: 60px;
         right: 0;
         width: 100%;
         text-align: center;
         padding: 20px 0;
+        gap: 1rem;
     }
 
     .nav-links.active {
@@ -412,9 +421,64 @@ a {
     .hamburger {
         display: block;
         color: #fff;
+        font-size: 1.5rem;
+    }
+
+    .hero {
+        height: auto;
+        min-height: 80vh;
+        padding: 60px 20px;
     }
 
     .hero-content h1 {
         font-size: 2.5rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.9rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+        margin: 5px;
+    }
+
+    .content-section {
+        padding: 2rem 5%;
+    }
+
+    .page-title {
+        font-size: 2rem;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .card-image {
+        height: 150px;
+    }
+
+    .card-content h3 {
+        font-size: 1.2rem;
+    }
+
+    .card-content p {
+        font-size: 0.85rem;
+    }
+
+    .contact-card {
+        padding: 1.5rem;
+        width: 100%;
+    }
+
+    .contact-item {
+        font-size: 1rem;
     }
 }
