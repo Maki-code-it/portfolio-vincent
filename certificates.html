@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Vincent Miguel P. Soriano</title>
+    <meta name="description" content="Certificates of Vincent Miguel P. Soriano - Professional certifications and achievements">
+    <meta name="keywords" content="certificates, certifications, achievements, Vincent Soriano">
+    <meta name="author" content="Vincent Miguel P. Soriano">
+    <title>Certificates | Vincent Miguel P. Soriano</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -22,6 +27,7 @@
                 <div class="dropdown-content">
                     <a href="projects.html#programming-projects">Programming Projects</a>
                     <a href="projects.html#video-editing-projects">Video Editing Projects</a>
+                    <a href="projects.html#graphics-designing-projects">Graphics Designing Projects</a>
                 </div>
             </li>
             <li><a href="certificates.html" class="active">Certificates</a></li>
@@ -39,7 +45,7 @@
 
             <div class="card" onclick="openPdfModal('Dataentry_Ecert.pdf')">
                 <div class="card-image">
-                    <img src="Dataentry_ss.png" alt="Remote Data Entry Certificate Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="Dataentry_ss.png" alt="Remote Data Entry Certificate Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="card-content">
                     <h3>Remote Data Entry Free Course</h3>
@@ -50,7 +56,7 @@
 
             <div class="card" onclick="openPdfModal('Infosec_Ecert.pdf')">
                 <div class="card-image">
-                    <img src="Infosec_ss.png" alt="Information Security Certificate Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="Infosec_ss.png" alt="Information Security Certificate Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="card-content">
                     <h3>CS406: Information Security</h3>
@@ -61,7 +67,7 @@
 
             <div class="card" onclick="openPdfModal('CustomerSupportData_Ecert.pdf')">
                 <div class="card-image">
-                    <img src="CustomerSupportData_ss.png" alt="Customer Support Data Certificate Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="CustomerSupportData_ss.png" alt="Customer Support Data Certificate Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="card-content">
                     <h3>Create Customer Support Data with Google Sheets</h3>
@@ -72,7 +78,7 @@
 
             <div class="card" onclick="openPdfModal('msoffice_Ecert.pdf')">
                 <div class="card-image">
-                    <img src="msoffice_ss.png" alt="MS Office Certificate Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="msoffice_ss.png" alt="MS Office Certificate Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="card-content">
                     <h3>MS Office (Short Course)</h3>
@@ -83,7 +89,7 @@
 
             <div class="card" onclick="openPdfModal('webdev_ss.png', 'image')">
                 <div class="card-image">
-                    <img src="webdev_ss.png" alt="Web Development Design Workshop Certificate Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="webdev_ss.png" alt="Web Development Design Workshop Certificate Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="card-content">
                     <h3>ICT Training: Web Development Design Workshop – 2nd Place</h3>
@@ -94,7 +100,7 @@
 
             <div class="card" onclick="openPdfModal('nc2_ss.png', 'image')">
                 <div class="card-image">
-                    <img src="nc2_ss.png" alt="Computer Systems Servicing (CSS) NC II Certificate Preview" style="width: 100%; height: 100%; object-fit: cover;">
+                    <img src="nc2_ss.png" alt="Computer Systems Servicing (CSS) NC II Certificate Preview" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
                 </div>
                 <div class="card-content">
                     <h3>Computer Systems Servicing (CSS) NC II</h3>
@@ -115,7 +121,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
     <script>
         function openPdfModal(file, type) {
             const modal = document.getElementById('pdfModal');

@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     canvas.height = window.innerHeight;
 
     let particles = [];
+    const maxParticles = 50;
 
     class Particle {
         constructor(x, y) {
@@ -70,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     document.addEventListener('mousemove', (e) => {
-        for (let i = 0; i < 3; i++) {
+        if (particles.length < maxParticles) {
             particles.push(new Particle(e.clientX, e.clientY));
         }
     });
@@ -99,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // ===== Create Floating Background Particles =====
     function createFloatingParticles() {
-        for (let i = 0; i < 30; i++) {
+        for (let i = 0; i < 15; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             particle.style.left = Math.random() * 100 + '%';

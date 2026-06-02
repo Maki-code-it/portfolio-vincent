@@ -3,7 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Projects by Vincent Miguel P. Soriano - Web Development, Video Editing, and Graphics Design projects">
+    <meta name="keywords" content="projects, web development, video editing, graphics design, Vincent Soriano">
+    <meta name="author" content="Vincent Miguel P. Soriano">
     <title>Projects | Vincent Miguel P. Soriano</title>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -21,6 +26,7 @@
                 <div class="dropdown-content">
                     <a href="projects.html#programming-projects">Programming Projects</a>
                     <a href="projects.html#video-editing-projects">Video Editing Projects</a>
+                    <a href="projects.html#graphics-designing-projects">Graphics Designing Projects</a>
                 </div>
             </li>
             <li><a href="certificates.html">Certificates</a></li>
@@ -256,6 +262,77 @@
             </div>
     </section>
 
-    <script src="script.js"></script>
+    <section class="content-section" id="graphics-designing-projects">
+        <h1 class="page-title">Graphics Designing Projects</h1>
+        
+        <div class="project-grid">
+            <div class="card" onclick="openPdfModal('vitacocoGrapix.jpg', 'image')" style="cursor: pointer;">
+                <div class="card-image">
+                    <img src="vitacocoGrapix.jpg" alt="Vitacoco" width="400" height="300" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-content">
+                    <h3>Vitacoco</h3>
+                    <p>Graphics design project for Vitacoco.</p>
+                    <button onclick="event.stopPropagation(); openPdfModal('vitacocoGrapix.jpg', 'image')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Design</button>
+                </div>
+            </div>
+
+            <div class="card" onclick="openPdfModal('gtrGrapix.jpg', 'image')" style="cursor: pointer;">
+                <div class="card-image">
+                    <img src="gtrGrapix.jpg" alt="GTR Grapix" width="400" height="300" style="width: 100%; height: 100%; object-fit: cover;">
+                </div>
+                <div class="card-content">
+                    <h3>Nissan GTR-35</h3>
+                    <p>Graphics design project Nissan GTR.</p>
+                    <button onclick="event.stopPropagation(); openPdfModal('gtrGrapix.jpg', 'image')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Design</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PDF Modal -->
+    <div id="pdfModal" class="pdf-modal">
+        <div class="pdf-modal-content">
+            <span class="pdf-close" onclick="closePdfModal()">&times;</span>
+            <iframe id="pdfFrame" class="pdf-frame"></iframe>
+            <img id="pdfImage" class="pdf-image" style="display: none; width: 100%; height: 100%; object-fit: contain;">
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <script>
+        function openPdfModal(file, type) {
+            const modal = document.getElementById('pdfModal');
+            const frame = document.getElementById('pdfFrame');
+            const image = document.getElementById('pdfImage');
+            
+            if (type === 'image') {
+                frame.style.display = 'none';
+                image.style.display = 'block';
+                image.src = file;
+            } else {
+                image.style.display = 'none';
+                frame.style.display = 'block';
+                frame.src = file;
+            }
+            modal.style.display = 'flex';
+        }
+
+        function closePdfModal() {
+            const modal = document.getElementById('pdfModal');
+            const frame = document.getElementById('pdfFrame');
+            const image = document.getElementById('pdfImage');
+            frame.src = '';
+            image.src = '';
+            modal.style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('pdfModal');
+            if (event.target == modal) {
+                closePdfModal();
+            }
+        }
+    </script>
 </body>
 </html>
