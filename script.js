@@ -130,21 +130,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
         setTimeout(() => ripple.remove(), 600);
     });
-
-    // ===== Optional: Card Fade-in Effect =====
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.animation = `fadeIn 0.5s ease forwards ${index / 7 + 0.2}s`;
-    });
 });
-
-// ===== Fade-in Animation Keyframes (Injected Dynamically) =====
-const styleSheet = document.createElement("style");
-styleSheet.innerText = `
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-`;
-document.head.appendChild(styleSheet);
