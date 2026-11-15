@@ -9,6 +9,18 @@
     <title>Vincent Miguel P. Soriano | Portfolio</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta name="color-scheme" content="light dark">
+    <script>
+        /* Apply saved or system theme before first paint (prevents a flash of the wrong theme) */
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (t !== 'light' && t !== 'dark') {
+                t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -19,9 +31,9 @@
     <!-- Neon Canvas for Trailing Effects -->
     <canvas id="neon-canvas"></canvas>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="logo">VM. Soriano</div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-nav">
             <li><a href="index.html" class="active">Home</a></li>
             <li class="dropdown">
                 <a href="projects.html">Projects</a>
@@ -34,22 +46,29 @@
             <li><a href="certificates.html">Certificates</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                <span class="knob" aria-hidden="true"></span>
+            </button>
+            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
     <section class="hero">
         <div class="hero-content">
             <h1>Vincent Miguel P. Soriano</h1>
-            <h2>Data Encoder | Virtual Assistant | Video Editor | Programmer</h2>
+            <h2>BSIT Student | IT Support | Web Developer | Video Editor</h2>
             <p>
-                Detail-oriented and highly efficient BSIT undergraduate seeking entry-level remote opportunities. Possesses exceptional typing speed of 90–100 WPM and intermediate-to-advanced proficiency in Microsoft Excel and Google Sheets, with hands-on experience in systems such as POS, Document Management, Inventory Management, and E-commerce platforms. Skilled in video editing and content creation using CapCut and Canva.
+                BSIT student and consistent Dean's Lister at Pamantasan ng Lungsod ng Pasig, seeking an OJT/internship in IT. Hands-on experience in IT support, web development, and building academic information systems such as POS, Document Management, Resource Management, Inventory Management, and E-commerce. Skilled in video editing and content creation using CapCut and Canva.
             </p>
             <div class="cta-buttons">
                 <a href="projects.html" class="btn">View My Work</a>
                 <a href="contact.html" class="btn btn-outline">Contact Me</a>
-                <a href="Vincent_Miguel_Soriano_Resume_3.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
+                <a href="Vincent_Soriano_Resume6.pdf" target="_blank" class="btn btn-outline">Download Resume</a>
             </div>
         </div>
     </section>

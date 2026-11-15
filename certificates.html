@@ -9,6 +9,18 @@
     <title>Certificates | Vincent Miguel P. Soriano</title>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preconnect" href="https://fonts.googleapis.com">
+        <meta name="color-scheme" content="light dark">
+    <script>
+        /* Apply saved or system theme before first paint (prevents a flash of the wrong theme) */
+        (function () {
+            var t;
+            try { t = localStorage.getItem('theme'); } catch (e) {}
+            if (t !== 'light' && t !== 'dark') {
+                t = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            }
+            document.documentElement.setAttribute('data-theme', t);
+        })();
+    </script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
@@ -18,9 +30,9 @@
 <!-- Neon Canvas for Trailing Effects -->
 <canvas id="neon-canvas"></canvas>
 
-    <nav class="navbar">
+    <nav class="navbar" aria-label="Main navigation">
         <div class="logo">VM. Soriano</div>
-        <ul class="nav-links">
+        <ul class="nav-links" id="primary-nav">
             <li><a href="index.html">Home</a></li>
             <li class="dropdown">
                 <a href="projects.html">Projects</a>
@@ -33,8 +45,15 @@
             <li><a href="certificates.html" class="active">Certificates</a></li>
             <li><a href="contact.html">Contact</a></li>
         </ul>
-        <div class="hamburger">
-            <i class="fas fa-bars"></i>
+        <div class="nav-actions">
+            <button class="theme-toggle" type="button" role="switch" aria-checked="false" aria-label="Dark mode">
+                <svg class="ico ico-sun" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+                <svg class="ico ico-moon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+                <span class="knob" aria-hidden="true"></span>
+            </button>
+            <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-nav">
+                <i class="fas fa-bars" aria-hidden="true"></i>
+            </button>
         </div>
     </nav>
 
@@ -50,7 +69,7 @@
                 <div class="card-content">
                     <h3>Remote Data Entry Free Course</h3>
                     <p>Oxford Home Study Centre (OHSC) - Completed an online course covering data entry fundamentals, accuracy techniques, and professional workflow management through written assignments and projects conducted entirely in English.</p>
-                    <button onclick="event.stopPropagation(); openPdfModal('Dataentry_Ecert.pdf')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Certificate</button>
+                    <button onclick="event.stopPropagation(); openPdfModal('Dataentry_Ecert.pdf')" class="btn-small">View Certificate</button>
                 </div>
             </div>
 
@@ -61,7 +80,7 @@
                 <div class="card-content">
                     <h3>CS406: Information Security</h3>
                     <p>Saylor University - Completed a 46-hour course on information security principles, covering cybersecurity fundamentals, risk management, and data protection strategies. Achieved a grade of 89.80% and earned 4.6 Continuing Education Units.</p>
-                    <button onclick="event.stopPropagation(); openPdfModal('Infosec_Ecert.pdf')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Certificate</button>
+                    <button onclick="event.stopPropagation(); openPdfModal('Infosec_Ecert.pdf')" class="btn-small">View Certificate</button>
                 </div>
             </div>
 
@@ -72,7 +91,7 @@
                 <div class="card-content">
                     <h3>Create Customer Support Data with Google Sheets</h3>
                     <p>Coursera (Project Certificate) - An online project authorized and offered through Coursera, focused on building customer support data management systems using Google Sheets. Verified at: https://coursera.org/verify/2CWU1DQYKH5R</p>
-                    <button onclick="event.stopPropagation(); openPdfModal('CustomerSupportData_Ecert.pdf')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Certificate</button>
+                    <button onclick="event.stopPropagation(); openPdfModal('CustomerSupportData_Ecert.pdf')" class="btn-small">View Certificate</button>
                 </div>
             </div>
 
@@ -83,7 +102,7 @@
                 <div class="card-content">
                     <h3>MS Office (Short Course)</h3>
                     <p>Oxford Home Study Centre (OHSC) - Completed a short course covering MS Office applications, assessed through written assignments and projects conducted in English.</p>
-                    <button onclick="event.stopPropagation(); openPdfModal('msoffice_Ecert.pdf')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Certificate</button>
+                    <button onclick="event.stopPropagation(); openPdfModal('msoffice_Ecert.pdf')" class="btn-small">View Certificate</button>
                 </div>
             </div>
 
@@ -94,7 +113,7 @@
                 <div class="card-content">
                     <h3>ICT Training: Web Development Design Workshop – 2nd Place</h3>
                     <p>Technological Institute of the Philippines (TIP) – Manila Arlegui Building - Certificate of Recognition awarded for winning 2nd place in a training event on Web Development Design, organized by TIP Manila.</p>
-                    <button onclick="event.stopPropagation(); openPdfModal('webdev_ss.png', 'image')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Certificate</button>
+                    <button onclick="event.stopPropagation(); openPdfModal('webdev_ss.png', 'image')" class="btn-small">View Certificate</button>
                 </div>
             </div>
 
@@ -105,7 +124,7 @@
                 <div class="card-content">
                     <h3>Computer Systems Servicing (CSS) NC II</h3>
                     <p>TESDA NC II Achiever | Asia Source College of Arts and Technology - Technical-vocational certification by the Technical Education and Skills Development Authority (TESDA) in the Philippines, covering computer hardware servicing, networking, and systems maintenance.</p>
-                    <button onclick="event.stopPropagation(); openPdfModal('nc2_ss.png', 'image')" class="btn-small" style="cursor: pointer; background: none; border: none; padding: 0; font: inherit; color: var(--primary-color); text-decoration: underline;">View Certificate</button>
+                    <button onclick="event.stopPropagation(); openPdfModal('nc2_ss.png', 'image')" class="btn-small">View Certificate</button>
                 </div>
             </div>
 
